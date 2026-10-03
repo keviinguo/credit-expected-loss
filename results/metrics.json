@@ -1,0 +1,73 @@
+{
+  "n_accounts": 30000,
+  "default_rate": 0.2212,
+  "n_test": 6000,
+  "assumptions": {
+    "LGD": 0.75,
+    "CCF": 0.5
+  },
+  "holdout": {
+    "always_no_default": {
+      "accuracy": 0.7788,
+      "roc_auc": 0.5,
+      "pr_auc": 0.2212,
+      "brier": 0.2212,
+      "precision_at_0.5": 0.0,
+      "recall_at_0.5": 0.0
+    },
+    "last_month_status_only": {
+      "accuracy": 0.8192,
+      "roc_auc": 0.6762,
+      "pr_auc": 0.4325,
+      "brier": 0.1493,
+      "precision_at_0.5": 0.6903,
+      "recall_at_0.5": 0.3308
+    },
+    "logistic_regression": {
+      "accuracy": 0.8062,
+      "roc_auc": 0.7416,
+      "pr_auc": 0.502,
+      "brier": 0.1428,
+      "precision_at_0.5": 0.6349,
+      "recall_at_0.5": 0.2909,
+      "cv_auc_mean": 0.7571,
+      "cv_auc_sd": 0.0072
+    },
+    "lightgbm": {
+      "accuracy": 0.819,
+      "roc_auc": 0.7807,
+      "pr_auc": 0.5609,
+      "brier": 0.1347,
+      "precision_at_0.5": 0.6676,
+      "recall_at_0.5": 0.3617,
+      "cv_auc_mean": 0.7869,
+      "cv_auc_sd": 0.0053
+    }
+  },
+  "expected_loss": {
+    "flat_pd": {
+      "predicted_el_ntd": 109805130.0,
+      "pred_vs_realised": 1.164
+    },
+    "logistic_regression": {
+      "predicted_el_ntd": 89330486.0,
+      "pred_vs_realised": 0.947
+    },
+    "lightgbm": {
+      "predicted_el_ntd": 90466845.0,
+      "pred_vs_realised": 0.959
+    },
+    "realised_loss_ntd": 94314658.0,
+    "portfolio_ead_ntd": 661850475.0,
+    "el_rate_of_ead": 0.1367,
+    "riskiest_20pct_share_of_loss": 0.451,
+    "top_decile_default_rate": 0.7,
+    "bottom_decile_default_rate": 0.037,
+    "lgd_sensitivity_el_ntd": {
+      "0.45": 54280107.0,
+      "0.6": 72373476.0,
+      "0.75": 90466845.0,
+      "0.9": 108560214.0
+    }
+  }
+}
